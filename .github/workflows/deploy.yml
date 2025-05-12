@@ -5,6 +5,20 @@ on:
     branches:
       - main
 
+
+#Permissions to write on github pages        
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+
+#cancel previous deployments if there is new push on main
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+  
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
