@@ -6,18 +6,16 @@ on:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Show deployment contents
+        run: ls -A
 
-    steps:
       - name: Start SSH Agent
         uses: webfactory/ssh-agent@v0.5.3
         with:
