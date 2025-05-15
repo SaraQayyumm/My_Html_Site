@@ -30,4 +30,4 @@ jobs:
 
       - name: Copy index.html to server
         run: |
-          scp index.html ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/root/web
+          scp index.html root@${{ secrets.SERVER_IP }}:/root/web
